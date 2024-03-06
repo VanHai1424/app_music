@@ -283,6 +283,7 @@ const app = {
 
         // audio played
         audio.addEventListener('play', function() {
+            audio.volume = 0.5;
             player.classList.add('playing');
             app.isPlaying = true;
             cdThumbAnimate.play();
