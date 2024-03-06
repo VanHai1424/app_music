@@ -16,6 +16,8 @@ const app = {
     isPlaying: false,
     isRandom: false,
     isRepeat: false,
+    isShow: true,
+    currentVolume: 1,
     songs: [
         {
             name: "Last night",
@@ -167,8 +169,12 @@ const app = {
                     <h3 class="title">${song.name}</h3>
                     <p class="author">${song.singer}</p>
                 </div>
-                <div class="option">
+                <div class="option" data-index="${index}">
                     <i class="fas fa-ellipsis-h"></i>
+                    <div class="setting" data-index="${index}">
+                        <i class="fa-solid fa-volume-high fa-xs"></i>
+                        <input type="range" class="volume" name="" id="" value="${this.currentVolume}" step="0.01" min="0" max="1">
+                    </div>
                 </div>
             </div>
             `;
@@ -193,6 +199,11 @@ const app = {
 
         heading.innerText = curSong.name;
         cdThumb.style.backgroundImage = `url('${curSong.image}')`;
+        if (this.currentVolume == 0) {
+            audio.muted = true;
+        } else {
+            audio.volume = this.currentVolume;
+        }
         audio.src = curSong.path;
     },
     nextSong: function() {
@@ -236,6 +247,26 @@ const app = {
         this.currentIndex = newIndex;
         this.loadCurrentSong();
 
+    },
+    showVolume: function(index) {
+        const settings = $$('.setting');
+        
+        settings.forEach(setting => {
+            if(setting.dataset.index == index) {
+                setting.style.display = 'flex';
+
+            }
+        });
+        
+    
+    },
+    hideVolume: function(index) {
+        const settings = $$('.setting');
+        
+        settings.forEach(setting => {
+            setting.style.display = 'none';
+        });
+    
     },
     handleEvent: function() {
         // roll cd
@@ -283,7 +314,7 @@ const app = {
 
         // audio played
         audio.addEventListener('play', function() {
-            audio.volume = 0.5;
+            audio.volume = app.currentVolume;
             player.classList.add('playing');
             app.isPlaying = true;
             cdThumbAnimate.play();
@@ -329,14 +360,35 @@ const app = {
 
         // click song in playlist
         playList.addEventListener('click', function(e) {
-            if(!e.target.closest('.option') && e.target.closest('.song:not(.active)')) {
-                const indexSong = e.target.closest('.song').dataset.index;
-                app.currentIndex = indexSong;
-                app.loadCurrentSong();
-                app.renderPlayList();
-                audio.play();
+            if(e.target.closest('.option') && e.target.closest('.song.active')) {
+                app.showVolume(e.target.closest('.option').dataset.index);
+            } else {
+                app.hideVolume();
+                if(e.target.closest('.song:not(.active)') && !e.target.closest('.option')) {
+                    const indexSong = e.target.closest('.song').dataset.index;
+                    app.currentIndex = indexSong;
+                    app.loadCurrentSong();
+                    app.renderPlayList();
+                    audio.play();
+                }
+               
+            }   
+            
+            // chang volume
+            if(e.target.closest('.volume')) {
+                const volume = e.target.closest('.volume');
+                audio.volume = Number(e.target.value);
+                app.currentVolume = Number(e.target.value);
+
+                volume.addEventListener('input', function(e) {
+                    audio.volume  = Number(e.target.value);
+                    app.currentVolume = Number(e.target.value);
+                });
+    
             }
+            
         })
+
     },
     start: function() {
         this.loadCurrentSong();
