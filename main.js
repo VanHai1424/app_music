@@ -199,11 +199,7 @@ const app = {
 
         heading.innerText = curSong.name;
         cdThumb.style.backgroundImage = `url('${curSong.image}')`;
-        if (this.currentVolume == 0) {
-            audio.muted = true;
-        } else {
-            audio.volume = this.currentVolume;
-        }
+        audio.volume = this.currentVolume;
         audio.src = curSong.path;
     },
     nextSong: function() {
