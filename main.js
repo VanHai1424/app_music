@@ -18,26 +18,6 @@ const app = {
     isRepeat: false,
     songs: [
         {
-            name: "2002",
-            singer: "AnneMarie",
-            path: "./songs/y2mate.com - AnneMarie  2002 Official Video.mp3",
-            image:
-                "https://home.voca.vn/assets/img/upload/images/Loi-dich-bai-hat-2002.jpg"
-        },
-        {
-            name: "Cơm áo gạo tiền",
-            singer: "7dnight",
-            path: "./songs/y2mate.com - 7dnight  Cơm Áo Gạo Tiền Official Video.mp3",
-            image: "https://i.ytimg.com/vi/0HeFKcZzvr0/maxresdefault.jpg"
-        },
-        {
-            name: "Chắc là say òi",
-            singer: "24kright",
-            path: "./songs/y2mate.com - CHẮC LÀ SAY ÒI.mp3",
-            image:
-            "https://avatar-ex-swe.nixcdn.com/song/2021/11/26/4/a/f/f/1637913147872_640.jpg"
-        },
-        {
             name: "Last night",
             singer: "Hazel",
             path:
@@ -45,26 +25,11 @@ const app = {
             image: "https://i.ytimg.com/vi/64JksYSh4q0/maxresdefault.jpg"
         },
         {
-            name: "Tip Toe",
-            singer: "HYBS",
-            path: "./songs/y2mate.com - HYBS  Tip Toe speed up.mp3",
+            name: "Chắc là say rồi",
+            singer: "24kright",
+            path: "./songs/y2mate.com - CHẮC LÀ SAY ÒI.mp3",
             image:
-                "https://i.ytimg.com/vi/nNA9ru2Ox5o/maxresdefault.jpg"
-        },
-        {
-            name: "At my worst",
-            singer: "Pink sweat",
-            path:
-                "./songs/y2mate.com - Pink Sweat  At My Worst Official Video.mp3",
-            image:
-                "https://avatar-ex-swe.nixcdn.com/song/2020/09/15/3/7/8/3/1600184151280_640.jpg"
-        },
-        {
-            name: "Hello VietNam",
-            singer: "Pham Quynh Anh",
-            path: "./songs/y2mate.com - Hello Viet NamPham Quynh Anh HDLyricsHD Kara  Vietsub.mp3",
-            image:
-                "https://i.ytimg.com/vi/NCPCoAtCqfc/maxresdefault.jpg"
+            "https://avatar-ex-swe.nixcdn.com/song/2021/11/26/4/a/f/f/1637913147872_640.jpg"
         },
         {
             name: "Open your eyes",
@@ -88,11 +53,109 @@ const app = {
                 "https://i.ytimg.com/vi/IVr1d084nLg/maxresdefault.jpg"
         },
         {
-            name: "Sinh nhat cua sinh nhat",
+            name: "Sinh nhật của xinh nhất",
             singer: "24K Right",
             path: "./songs/y2mate.com - 24KRIGHT  SINH NHẬT CỦA XINH NHẤT Feat HIEUTHUHAI HIPZ Official Visualizer.mp3",
             image:
                 "https://i.ytimg.com/vi/sv71xn_1oRk/maxresdefault.jpg"
+        },
+        {
+            name: "Soda",
+            singer: "MCK",
+            path: "./songs/y2mate.com - SODA  MCK prodGC.mp3",
+            image:
+                "https://i.ytimg.com/vi/kJw-XWgfPm8/0.jpg"
+        },
+        {
+            name: "Chỉ 1 đêm nữa thôi",
+            singer: "MCK",
+            path: "./songs/y2mate.com - 06 Chỉ Một Đêm Nữa Thôi  RPT MCK  ft tlinh    99  the album.mp3",
+            image:
+                "https://i.ytimg.com/vi/5WkwBKu1le0/0.jpg"
+        },
+        {
+            name: "Dám rực rỡ",
+            singer: "GREY D x HIEUTHUHAI x Wren Evans x Obito ",
+            path: "./songs/y2mate.com - Dám Rực Rỡ  GREY D x HIEUTHUHAI x Wren Evans x Obito  Prod by 2pillz  Kai Đinh  WCAs 2023.mp3",
+            image:
+                "https://i.ytimg.com/vi/cFfuy_2wsz4/0.jpg"
+        },
+        {
+            name: "Call me on my phone 2",
+            singer: "Snowz",
+            path: "./songs/y2mate.com - Call Me On My Phone 2 feat puppy Wheelie  SpideyBoy.mp3",
+            image:
+                "https://i.ytimg.com/vi/QrpOPQ6ZXt8/0.jpg"
+        },
+        {
+            name: "Mưa đang rơi",
+            singer: "MCK",
+            path: "./songs/y2mate.com - Mưa đang rơi  BABY MOKE ft MCK.mp3",
+            image:
+                "https://i.ytimg.com/vi/D5Wm4biVqkc/0.jpg"
+        },
+        {
+            name: "Va vào giai điệu này",
+            singer: "MCK",
+            path: "./songs/y2mate.com - 04 Va Vào Giai Điệu Này  RPT MCK  99 the album.mp3",
+            image:
+                "https://i.ytimg.com/vi/M7UlJ0m-yy4/0.jpg"
+        },
+        {
+            name: "Chương 2 của tương lai",
+            singer: "WEAN x MCK x TENKITSUNE",
+            path: "./songs/y2mate.com - CHƯƠNG 2 CỦA TƯƠNG LAI  WEAN x MCK x TENKITSUNE.mp3",
+            image:
+                "https://i.ytimg.com/vi/VIjuCzNI0rQ/0.jpg"
+        },
+        {
+            name: "Cold don't",
+            singer: "Nmọc ft. Dmean x Astac",
+            path: "./songs/y2mate.com - Cold Dont  Nmọc ft Dmean x Astac  Official Lyrics Video   Prodby Meocamtu .mp3",
+            image:
+                "https://i.ytimg.com/vi/plRWjecAwZk/0.jpg"
+        },
+        {
+            name: "Just ink hình xăm lên đi ",
+            singer: "LJ",
+            path: "./songs/y2mate.com - LJ  Just Ink Hình Xăm Lên Đi  Official MV.mp3",
+            image:
+                "https://i.ytimg.com/vi/RmR5Q9TZKvM/0.jpg"
+        },
+        {
+            name: "Dân chơi sao phải khóc",
+            singer: "Andree Right Hand - Rhyder",
+            path: "./songs/y2mate.com - Dân Chơi Sao Phải Khóc.mp3",
+            image:
+                "https://i.ytimg.com/vi/9zeE-ScuVNg/0.jpg"
+        },
+        {
+            name: "Chịu cách mình nói thua",
+            singer: "RHYDER ft COOLKID",
+            path: "./songs/y2mate.com - RHYDER  CHỊU CÁCH MÌNH NÓI THUA  ft BAN x COOLKID  OFFICIAL MUSIC VIDEO.mp3",
+            image:
+                "https://i.ytimg.com/vi/dm5-tn1Rug0/0.jpg"
+        },
+        {
+            name: "Tại vì sao",
+            singer: "MCK",
+            path: "./songs/y2mate.com - RPT MCK  TẠI VÌ SAO  Official Music Video.mp3",
+            image:
+                "https://i.ytimg.com/vi/U0Vr1zotKIo/0.jpg"
+        },
+        {
+            name: "Nghe như tình yêu",
+            singer: "MCK",
+            path: "./songs/y2mate.com - Nghe như tình yêu  MCK remixx prod By Kewtiie.mp3",
+            image:
+                "https://i.ytimg.com/vi/L_z9YHX5ous/0.jpg"
+        },
+        {
+            name: "TGSN",
+            singer: "Tlinh - RZ Mas",
+            path: "./songs/y2mate.com - TGSN  Siren feat Tlinh  RZ Mas  Official Music Video.mp3",
+            image:
+                "https://i.ytimg.com/vi/_akC0MOxdV0/0.jpg"
         }
     ],
     renderPlayList: function() {
