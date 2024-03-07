@@ -197,6 +197,7 @@ const app = {
         const heading = $('header h2');
         const audio = $('#audio');
 
+        progress.value = 0;
         heading.innerText = curSong.name;
         cdThumb.style.backgroundImage = `url('${curSong.image}')`;
         audio.volume = this.currentVolume;
