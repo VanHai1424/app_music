@@ -11,12 +11,12 @@ const cdThumb = $('.cd-thumb');
 const btnRan = $('.btn-random');
 const btnRep = $('.btn-repeat');
 
+
 const app = {
     currentIndex: 0,
     isPlaying: false,
     isRandom: false,
     isRepeat: false,
-    isShow: true,
     currentVolume: 1,
     songs: [
         {
@@ -173,13 +173,12 @@ const app = {
                     <i class="fas fa-ellipsis-h"></i>
                     <div class="setting" data-index="${index}">
                         <i class="fa-solid fa-volume-high fa-xs"></i>
-                        <input type="range" class="volume" name="" id="" value="${this.currentVolume}" step="0.01" min="0" max="1">
+                        <input data-index="${index}" type="range" class="volume" name="" id="" value="${this.currentVolume}" step="0.01" min="0" max="1">
                     </div>
                 </div>
             </div>
             `;
         }).join("");
-
         playList.innerHTML = htmls;
     },
     scrollToActiveSong: function() {
@@ -247,11 +246,9 @@ const app = {
     },
     showVolume: function(index) {
         const settings = $$('.setting');
-        
         settings.forEach(setting => {
             if(setting.dataset.index == index) {
                 setting.style.display = 'flex';
-
             }
         });
         
@@ -259,7 +256,6 @@ const app = {
     },
     hideVolume: function(index) {
         const settings = $$('.setting');
-        
         settings.forEach(setting => {
             setting.style.display = 'none';
         });
@@ -359,6 +355,21 @@ const app = {
         playList.addEventListener('click', function(e) {
             if(e.target.closest('.option') && e.target.closest('.song.active')) {
                 app.showVolume(e.target.closest('.option').dataset.index);
+
+                // chang volume
+                const volumes = document.querySelectorAll('.volume');
+                volumes.forEach(volume => {
+                    if(volume.dataset.index == e.target.closest('.option').dataset.index) {
+                        audio.volume = Number(volume.value);
+                        app.currentVolume = Number(volume.value);
+                        
+                        volume.addEventListener('input', function(e) {
+                            audio.volume = Number(e.target.value);
+                            app.currentVolume = Number(e.target.value);
+                        });
+                    }
+                });
+
             } else {
                 app.hideVolume();
                 if(e.target.closest('.song:not(.active)') && !e.target.closest('.option')) {
@@ -368,21 +379,8 @@ const app = {
                     app.renderPlayList();
                     audio.play();
                 }
-               
             }   
-            
-            // chang volume
-            if(e.target.closest('.volume')) {
-                const volume = e.target.closest('.volume');
-                audio.volume = Number(e.target.value);
-                app.currentVolume = Number(e.target.value);
 
-                volume.addEventListener('input', function(e) {
-                    audio.volume  = Number(e.target.value);
-                    app.currentVolume = Number(e.target.value);
-                });
-    
-            }
             
         })
 
