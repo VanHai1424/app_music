@@ -183,7 +183,7 @@ const app = {
     },
     scrollToActiveSong: function() {
         setTimeout(() => {
-            const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+            const arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
             const optionBlock = arr.includes(this.currentIndex) ? 'center' : 'nearest';
             $('.song.active').scrollIntoView({
                 behavior: 'smooth',
