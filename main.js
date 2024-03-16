@@ -31,7 +31,7 @@ const app = {
             singer: "24kright",
             path: "./songs/y2mate.com - CHẮC LÀ SAY ÒI.mp3",
             image:
-            "https://avatar-ex-swe.nixcdn.com/song/2021/11/26/4/a/f/f/1637913147872_640.jpg"
+            "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/81/5d/a2/815da296-1ee1-937f-34b9-7a8524797ee3/pr_source.png/250x250bb.jpg"
         },
         {
             name: "Open your eyes",
